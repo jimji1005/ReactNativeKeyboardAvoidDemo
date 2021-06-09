@@ -1,41 +1,44 @@
 import React from 'react';
-import {View, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import {StyleSheet, View, KeyboardAvoidingView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useHeaderHeight} from '@react-navigation/stack';
 import AwesomeTextInput from './AwesomeTextInput';
 import AwesomeText from './AwesomeText';
 import AwesomeTouchableOpacity from './AwesomeTouchableOpacity';
 
-export default function FooterTextInputWithoutSpellCheck(props) {
+export default function FooterButton(props) {
   const headerHeight = useHeaderHeight();
 
-  const gotoNext = () => props.navigation.navigate('AvoidForm');
+  const gotoNext = () => props.navigation.navigate('BottomTab');
 
   return (
-    <SafeAreaView style={styles.FooterTextInputWithoutSpellCheckContainer}>
+    <SafeAreaView
+      style={styles.FooterButtonWithTabContainer}
+      edges={['right', 'top', 'left']}>
       <View style={styles.innerContainer}>
-        <AwesomeText text="Footer TextInput w/o SpellCheck" header />
-        <AwesomeText text="Input sticking to the bottom without spellCheck" />
-        <AwesomeTouchableOpacity title="Next Screen" onPress={gotoNext} />
+        <AwesomeText text="Footer Button w/tab" header />
+        <AwesomeText text="Input with spellcheck, button floating above tab" />
+        <AwesomeTextInput placeholder="Tap me!" />
       </View>
       <KeyboardAvoidingView
         behavior="padding"
         keyboardVerticalOffset={headerHeight}>
-        <AwesomeTextInput placeholder="Tap me! I stick to the bottom!" />
+        <AwesomeTouchableOpacity title="Next Screen" onPress={gotoNext} full />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  FooterTextInputWithoutSpellCheckContainer: {
+  FooterButtonWithTabContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingTop: 100,
-    backgroundColor: 'palegreen',
+    backgroundColor: 'lightcoral',
   },
   innerContainer: {
+    paddingHorizontal: 30,
     alignItems: 'center',
   },
 });

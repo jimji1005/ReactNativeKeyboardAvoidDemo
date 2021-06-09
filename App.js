@@ -10,6 +10,7 @@ import FooterTextInputWithoutSpellCheck from './src/FooterTextInputWithoutSpellC
 import AvoidForm from './src/AvoidForm';
 import FooterButton from './src/FooterButton';
 import FooterTextInputWithTab from './src/FooterTextInputWithTab';
+import FooterButtonWithTab from './src/FooterButtonWithTab';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,6 +22,7 @@ function BottomTab() {
         name="FooterTextInputWithTab"
         component={FooterTextInputWithTab}
       />
+      <Tab.Screen name="FooterButtonWithTab" component={FooterButtonWithTab} />
     </Tab.Navigator>
   );
 }

@@ -7,8 +7,8 @@ export default function AwesomeTextInput(props) {
       <TextInput
         style={styles.textInput}
         placeholder={props.placeholder}
-        spellCheck={!!props.nospellcheck}
-        autoCorrect={!!props.nospellcheck}
+        spellCheck={props.spellCheck || false}
+        autoCorrect={props.spellCheck || false}
       />
     </View>
   );
@@ -17,7 +17,6 @@ export default function AwesomeTextInput(props) {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
-    paddingVertical: 8,
     alignItems: 'center',
   },
   textInput: {

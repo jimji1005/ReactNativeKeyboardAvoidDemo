@@ -22,7 +22,10 @@ export default function FooterTextInput(props) {
       <KeyboardAvoidingView
         behavior="padding"
         keyboardVerticalOffset={headerHeight}>
-        <AwesomeTextInput placeholder="Tap me! I stick to the bottom!" />
+        <AwesomeTextInput
+          spellCheck
+          placeholder="Tap me! I stick to the bottom!"
+        />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
