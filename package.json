@@ -1,7 +1,14 @@
 {
   "name": "reactnativekeyboardavoiddemo",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "author": {
+    "name": "Jim Ji",
+    "email": "jimji1005@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/jimji1005/ReactNativeKeyboardAvoidDemo"
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -34,5 +41,6 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "license": "MIT"
 }
