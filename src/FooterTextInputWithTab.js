@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import {ScrollView, StyleSheet, KeyboardAvoidingView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useHeaderHeight} from '@react-navigation/stack';
 import AwesomeTextInput from './AwesomeTextInput';
@@ -15,11 +15,11 @@ export default function FooterTextInputWithTab(props) {
     <SafeAreaView
       style={styles.FooterTextInputWithTabContainer}
       edges={['right', 'top', 'left']}>
-      <View style={styles.innerContainer}>
+      <ScrollView scrollEnabled={false} keyboardShouldPersistTaps="never">
         <AwesomeText text="Footer TextInput w/Tab" header />
         <AwesomeText text="Input sticking to the bottom with Tab" />
         <AwesomeTouchableOpacity title="Next Screen" onPress={gotoNext} />
-      </View>
+      </ScrollView>
       <KeyboardAvoidingView
         behavior="padding"
         keyboardVerticalOffset={headerHeight}>
