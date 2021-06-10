@@ -12,6 +12,20 @@ import FooterButton from './src/FooterButton';
 import FooterTextInputWithTab from './src/FooterTextInputWithTab';
 import FooterButtonWithTab from './src/FooterButtonWithTab';
 
+import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
+
+function getHeaderTitle(route) {
+  const routeName =
+    getFocusedRouteNameFromRoute(route) ?? 'FooterTextInputWithTab';
+
+  switch (routeName) {
+    case 'FooterTextInputWithTab':
+      return 'Sticky Input w/Tab';
+    case 'FooterButtonWithTab':
+      return 'Sticky Button w/Tab';
+  }
+}
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -35,14 +49,33 @@ const App = () => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="FooterTextInput" component={FooterTextInput} />
+          <Stack.Screen
+            name="FooterTextInput"
+            component={FooterTextInput}
+            options={{title: 'Sticky Input'}}
+          />
           <Stack.Screen
             name="FooterTextInputWithoutSpellCheck"
             component={FooterTextInputWithoutSpellCheck}
+            options={{title: 'Sticky Input w/o SpecllCheck'}}
           />
-          <Stack.Screen name="AvoidForm" component={AvoidForm} />
-          <Stack.Screen name="FooterButton" component={FooterButton} />
-          <Stack.Screen name="BottomTab" component={BottomTab} />
+          <Stack.Screen
+            name="AvoidForm"
+            component={AvoidForm}
+            options={{title: 'Many Input Avoid'}}
+          />
+          <Stack.Screen
+            name="FooterButton"
+            component={FooterButton}
+            options={{title: 'Sticky Button'}}
+          />
+          <Stack.Screen
+            name="BottomTab"
+            component={BottomTab}
+            options={({route}) => ({
+              headerTitle: getHeaderTitle(route),
+            })}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
