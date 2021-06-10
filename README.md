@@ -1,6 +1,10 @@
 # ReactNativeKeyboardAvoidDemo
 Examples of ways to avoid that keyboard using core `KeyboardAvoidView` component. This is a React Native project, you can pretty much copy this for Expo.
 
+## Demo
+![](assets/ios-demo.gif)
+
+
 ## Environment setup
 Follow instructions on how to setup your environment [reactnative.dev](https://reactnative.dev/docs/environment-setup)
 
@@ -34,3 +38,7 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 ## Copyright and Licensing
 
 MIT
+
+## Todo
+- [ ] Add android support
+- [ ] Add android gif
